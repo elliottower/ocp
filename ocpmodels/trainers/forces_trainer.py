@@ -334,7 +334,7 @@ class ForcesTrainer(BaseTrainer):
                 predictions["forces"] = out["forces"].detach()
                 return predictions
 
-        predictions["forces"] = np.array(predictions["forces"])
+        predictions["forces"] = np.array(predictions["forces"], dtype=object)
         predictions["chunk_idx"] = np.array(predictions["chunk_idx"])
         predictions["energy"] = np.array(predictions["energy"])
         predictions["id"] = np.array(predictions["id"])

@@ -774,7 +774,7 @@ class BaseTrainer:
                         np.array(gather_results[k])[idx]
                     )[:-1]
                 else:
-                    gather_results[k] = np.array(gather_results[k])[idx]
+                    gather_results[k] = np.array(gather_results[k], dtype=object)[idx]
 
             print(f"Writing results to {full_path}")
             np.savez_compressed(full_path, **gather_results)
